@@ -2,16 +2,21 @@
 # Run from the repo's root
 
 DIST='dist'
+SCRIPT="$DIST/shunc"
 
 # Create the dist folder
 [ -d "$DIST" ] || mkdir "$DIST"
 
 # Create the script
-echo '#!/bin/sh' > "$DIST/shunc"
+echo '#!/bin/sh' > "$SCRIPT"
 cat sh/* |
 {
 while read -r func; do
-  echo "$func" | sed 1,2d >> "$DIST/shunc"
+  if [ "$(echo $func | cut -c1)" != '#' ] &&
+     [ "$(echo $func | wc -m)" != 0 ]
+  then
+    echo "$func" >> "$SCRIPT"
+  fi
 done
 }
 
