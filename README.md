@@ -16,7 +16,7 @@ The goal of this library is to make shell scripting easier for everyone. Your sh
 . <Path/To/New/Location>/shunc
 ```
 
-### Examples
+## Examples
 
 ```sh
 #!/bin/sh
