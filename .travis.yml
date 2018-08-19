@@ -1,5 +1,7 @@
-git:
-  quiet: true
+install:
+  - export SHELLCHECK_OPTS="-e SC1091"
 
 script:
   - sh run_tests
+  - shellcheck sh/*
+  - shellcheck test/*/*.sh
