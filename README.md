@@ -25,3 +25,6 @@ The goal of this library is to make shell scripting easier for everyone. Your sh
 
 [ "$(_length $1)" -gt 8 ] && echo PASS || echo FAIL
 ```
+## Documentation
+
+You can find documentation for the various functions on the [wiki](https://github.com/PatrickDuncan/shunc/wiki).
