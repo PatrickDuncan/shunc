@@ -1,0 +1,5 @@
+git:
+  quiet: true
+
+script:
+  - sh run_tests
