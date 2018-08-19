@@ -1,0 +1,19 @@
+#!/bin/sh
+# Run from the repo's root
+
+DIST='dist'
+
+# Create the dist folder
+[ -d "$DIST" ] || mkdir "$DIST"
+
+# Create the script
+echo '#!/bin/sh' > "$DIST/shunc"
+cat sh/* |
+{
+while read func; do
+  echo $func | sed 1,2d >> "$DIST/shunc"
+done
+}
+
+# Make it executable
+chmod u+x "$DIST/shunc"
