@@ -5,6 +5,3 @@ script:
   - sh run_tests
   - shellcheck sh/*
   - shellcheck test/*/*.sh
-
-git:
-  quiet: true
