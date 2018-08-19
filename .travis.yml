@@ -1,11 +1,10 @@
-before_install:
-- sudo apt-get update -qq
-- sudo apt-get install -qq shellcheck
+install:
+  - export SHELLCHECK_OPTS="-e SC1091"
 
 script:
-- sh run_tests
-- shellcheck sh/*
-- shellcheck test*/*.sh
+  - sh run_tests
+  - shellcheck sh/*
+  - shellcheck test/*/*.sh
 
 git:
   quiet: true
