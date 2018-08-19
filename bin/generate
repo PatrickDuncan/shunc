@@ -1,0 +1,26 @@
+#!/bin/sh
+# Run from the repo's root
+
+DIST='dist'
+SCRIPT="$DIST/shunc"
+
+# Create the dist folder
+[ -d "$DIST" ] || mkdir "$DIST"
+
+# Create the script
+echo '#!/bin/sh' > "$SCRIPT"
+cat sh/* |
+{
+while read -r func; do
+  if [ "$(echo "$func" | cut -c1)" != '#' ] && # Ignore comments and shebangs
+     [ "$func" != "\\n" ]                      # Ignore new lines
+  then
+    echo "$func" >> "$SCRIPT"
+  fi
+done
+}
+
+# Make it executable
+chmod u+x "$DIST/shunc"
+
+echo "Please check $(pwd)/dist!"
