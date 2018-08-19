@@ -22,3 +22,5 @@ done
 
 # Make it executable
 chmod u+x "$DIST/shunc"
+
+echo "Please check $(pwd)/dist!"

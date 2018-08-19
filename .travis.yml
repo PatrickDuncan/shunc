@@ -2,7 +2,8 @@ install:
   - export SHELLCHECK_OPTS="-e SC1091"
 
 script:
-  - sh bin/run_tests
   - shellcheck sh/*
   - shellcheck test/*/*.sh
   - shellcheck bin/*
+  - sh bin/run_tests
+  - sh bin/generate
