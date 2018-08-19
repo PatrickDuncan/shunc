@@ -1,5 +1,11 @@
-git:
-  quiet: true
+before_install:
+- sudo apt-get update -qq
+- sudo apt-get install -qq shellcheck
 
 script:
-  - sh run_tests
+- sh run_tests
+- shellcheck sh/*
+- shellcheck test*/*.sh
+
+git:
+  quiet: true
