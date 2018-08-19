@@ -12,8 +12,8 @@ echo '#!/bin/sh' > "$SCRIPT"
 cat sh/* |
 {
 while read -r func; do
-  if [ "$(echo "$func" | cut -c1)" != '#' ] &&
-     [ "$func" != "\\n" ]
+  if [ "$(echo "$func" | cut -c1)" != '#' ] && # Ignore comments and shebangs
+     [ "$func" != "\\n" ]                      # Ignore new lines
   then
     echo "$func" >> "$SCRIPT"
   fi
