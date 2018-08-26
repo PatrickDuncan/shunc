@@ -10,7 +10,7 @@ The goal of this library is to make shell scripting easier for everyone. Your sh
 ```
 ./bin/generate
 ```
-2. The script will be in dist, move it into your own project.
+2. The script will be in _dist_, move it into your own project.
 3. Add this to the beginning of your script:
 ```
 . <Path/To/New/Location>/shunc
@@ -25,6 +25,13 @@ The goal of this library is to make shell scripting easier for everyone. Your sh
 
 [ "$(_length $1)" -gt 8 ] && echo PASS || echo FAIL
 ```
+
 ## Documentation
 
 You can find documentation for the various functions on the [wiki](https://github.com/PatrickDuncan/shunc/wiki).
+
+## Linting
+
+```
+docker run -e SHELLCHECK_OPTS="-e SC1091" -v "$PWD:/mnt" koalaman/shellcheck <FILE>
+```
