@@ -15,7 +15,7 @@ This script will not change the state of your variables. Meaning that if a funct
 2. The script will be in _dist_, move it into your own project.
 3. Add this to the beginning of your script:
 ```
-. <Path/To/New/Location>/shunc
+. <Path_To_New_Location>/shunc
 ```
 
 ## Examples
@@ -35,5 +35,27 @@ You can find documentation for the various functions on the [wiki](https://githu
 ## Linting
 
 ```
-docker run -e SHELLCHECK_OPTS="-e SC1091" -v "$PWD:/mnt" koalaman/shellcheck <FILE>
+docker run -e SHELLCHECK_OPTS="-e SC1091" -v "$PWD:/mnt" koalaman/shellcheck <Path_To_File>
+```
+
+## Testing
+
+##### Prerequisite(s)
+
+* Follow [Retrieve all submodules](#retrieve-all-submodules)
+
+##### All tests
+```
+./bin/run_tests
+```
+##### Single test
+```
+sh <Path_To_Test>
+```
+
+### Submodules
+
+##### Retrieve all submodules
+```
+git submodule update --remote --recursive --init
 ```
