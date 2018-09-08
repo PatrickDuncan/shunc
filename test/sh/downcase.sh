@@ -20,5 +20,9 @@ testDowncaseFromMixed() {
   assertEquals "$(_downcase 'twO WoRds')" 'two words'
 }
 
+testDowncaseNumbers() {
+  assertEquals "$(_downcase 'twO WoRds123')" 'two words123'
+}
+
 # Load and run shUnit2.
 . shunit2/shunit2
