@@ -4,6 +4,10 @@
 # Load the component
 . sh/trim.sh
 
+testTrimNoArgs() {
+  assertEquals "$(_trim)" ''
+}
+
 testTrimNoChange() {
   assertEquals "$(_trim 'Gurren Lagann')" 'Gurren Lagann'
 }

@@ -8,6 +8,10 @@ testRepeatNoArgs() {
   assertFalse "$(_repeat)"
 }
 
+testRepeatWrongArgs() {
+  assertFalse "$(_repeat word word)"
+}
+
 testRepeatLetterRepeat() {
   assertEquals "$(_repeat d 5)" 'ddddd'
 }

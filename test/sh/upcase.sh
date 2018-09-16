@@ -4,6 +4,10 @@
 # Load the component
 . sh/upcase.sh
 
+testUpcaseNoArgs() {
+  assertEquals "$(_upcase)" ''
+}
+
 testUpcaseFromNothing() {
   assertEquals "$(_upcase '')" ''
 }
