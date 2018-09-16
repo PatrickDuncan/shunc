@@ -4,6 +4,10 @@
 # Load the component
 . sh/downcase.sh
 
+testDowncaseNoArgs() {
+  assertEquals "$(_downcase)" ''
+}
+
 testDowncaseFromNothing() {
   assertEquals "$(_downcase '')" ''
 }

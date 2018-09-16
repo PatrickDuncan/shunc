@@ -4,6 +4,10 @@
 # Load the component
 . sh/length.sh
 
+testLengthNoArgs() {
+  assertEquals "$(_length)" 0
+}
+
 testLengthNoWord() {
   assertEquals "$(_length '')" 0
 }
