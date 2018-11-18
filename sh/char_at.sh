@@ -8,8 +8,8 @@ _char_at() {
   fi
   # Calculate index compatible with cut
   if echo "$2" | grep -Eq "^-"; then
-    shunc_length=$(_length $1)
-    shunc_index="$(($shunc_length + $2 + 1))"
+    shunc_length=$(_length "$1")
+    shunc_index="$((shunc_length + $2 + 1))"
   else
     shunc_index="$(($2 + 1))"
   fi
